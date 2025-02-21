@@ -1,8 +1,8 @@
 **Nand2Tetris - Complete Course Projects**  
 This repository contains all 10 projects from the **Nand2Tetris** course, a hands-on journey from building logic gates to implementing a full computer system, assembler, virtual machine, and compiler. 
 
-Projects 1-5 are dedicated to creating a computer starting with Nand gate.
-projects 6-11 are dedicated to making a full compiler - from high langauge (Jack) all the way to hack machine code.
+* Projects 1-5 are dedicated to creating a computer starting with Nand gate.
+* projects 6-11 are dedicated to making a full compiler - from high langauge (Jack) all the way to hack machine code.
 
 **Topics Covered:**  
 * Boolean logic & combinational circuits  
