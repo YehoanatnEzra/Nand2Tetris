@@ -1,0 +1,90 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Add16.hdl
+/**
+ * 16-bit adder: Adds two 16-bit two's complement values.
+ * The most significant carry bit is ignored.
+ */
+CHIP Add16 {
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+	//a[0] + b[0]
+	HalfAdder(a=a[0], b=b[0], sum=out[0], carry=carry0);
+
+	//a[1]+b[1]
+	HalfAdder(a=a[1], b=b[1], sum=sum1, carry=carry1a);
+	HalfAdder(a=sum1, b=carry0,sum=out[1], carry=carry1b);
+	Or(a=carry1a, b=carry1b, out=carry1);
+
+	//a[2]+b[2]
+	HalfAdder(a=a[2], b=b[2], sum=sum2, carry=carry2a);
+	HalfAdder(a=sum2, b=carry1,sum=out[2], carry=carry2b);
+	Or(a=carry2a, b=carry2b, out=carry2);
+
+	//a[3]+b[3]
+	HalfAdder(a=a[3], b=b[3], sum=sum3, carry=carry3a);
+	HalfAdder(a=sum3, b=carry2,sum=out[3], carry=carry3b);
+	Or(a=carry3a, b=carry3b, out=carry3);
+
+	//a[4]+b[4]
+	HalfAdder(a=a[4], b=b[4], sum=sum4, carry=carry4a);
+	HalfAdder(a=sum4, b=carry3, sum=out[4], carry=carry4b);
+	Or(a=carry4a, b=carry4b, out=carry4);
+
+	//a[5]+b[5]
+	HalfAdder(a=a[5], b=b[5], sum=sum5, carry=carry5a);
+	HalfAdder(a=sum5, b=carry4, sum=out[5], carry=carry5b);
+	Or(a=carry5a, b=carry5b, out=carry5);
+
+	//a[6]+b[6]
+	HalfAdder(a=a[6], b=b[6], sum=sum6, carry=carry6a);
+	HalfAdder(a=sum6, b=carry5, sum=out[6], carry=carry6b);
+	Or(a=carry6a, b=carry6b, out=carry6);
+
+	//a[7]+b[7]
+	HalfAdder(a=a[7], b=b[7], sum=sum7, carry=carry7a);
+	HalfAdder(a=sum7, b=carry6, sum=out[7], carry=carry7b);
+	Or(a=carry7a, b=carry7b, out=carry7);
+
+	//a[8]+b[8]
+	HalfAdder(a=a[8], b=b[8], sum=sum8, carry=carry8a);
+	HalfAdder(a=sum8, b=carry7, sum=out[8], carry=carry8b);
+	Or(a=carry8a, b=carry8b, out=carry8);
+
+	//a[9]+b[9]
+	HalfAdder(a=a[9], b=b[9], sum=sum9, carry=carry9a);
+	HalfAdder(a=sum9, b=carry8, sum=out[9], carry=carry9b);
+	Or(a=carry9a, b=carry9b, out=carry9);
+
+	//a[10]+b[10]
+	HalfAdder(a=a[10], b=b[10], sum=sum10, carry=carry10a);
+	HalfAdder(a=sum10, b=carry9, sum=out[10], carry=carry10b);
+	Or(a=carry10a, b=carry10b, out=carry10);
+
+	//a[11]+b[11]
+	HalfAdder(a=a[11], b=b[11], sum=sum11, carry=carry11a);
+	HalfAdder(a=sum11, b=carry10, sum=out[11], carry=carry11b);
+	Or(a=carry11a, b=carry11b, out=carry11);
+
+	//a[12]+b[12]
+	HalfAdder(a=a[12], b=b[12], sum=sum12, carry=carry12a);
+	HalfAdder(a=sum12, b=carry11, sum=out[12], carry=carry12b);
+	Or(a=carry12a, b=carry12b, out=carry12);
+
+	//a[13]+b[13]
+	HalfAdder(a=a[13], b=b[13], sum=sum13, carry=carry13a);
+	HalfAdder(a=sum13, b=carry12, sum=out[13], carry=carry13b);
+	Or(a=carry13a, b=carry13b, out=carry13);
+
+	//a[14]+b[14]
+	HalfAdder(a=a[14], b=b[14], sum=sum14, carry=carry14a);
+	HalfAdder(a=sum14, b=carry13, sum=out[14], carry=carry14b);
+	Or(a=carry14a, b=carry14b, out=carry14);
+
+	//a[15]+b[15]
+	HalfAdder(a=a[15], b=b[15], sum=sum15, carry=carry15a);
+	HalfAdder(a=sum15, b=carry14, sum=out[15], carry=carry15b);
+}

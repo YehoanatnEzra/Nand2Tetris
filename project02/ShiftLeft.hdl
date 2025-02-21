@@ -1,0 +1,47 @@
+// This file is part of nand2tetris, as taught in The Hebrew University, and
+// was written by Aviv Yaish. It is an extension to the specifications given
+// [here](https://www.nand2tetris.org) (Shimon Schocken and Noam Nisan, 2017),
+// as allowed by the Creative Common Attribution-NonCommercial-ShareAlike 3.0
+// Unported [License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
+
+/**
+ * 16-bit left shifter.
+ *
+ * The chip's output is a "left-shift" of the input:
+ * - Every input bit is moved one position to the left
+ * - A new "0" bit is inserted as the new right-most bit
+ *
+ * For example:
+ * ShiftLeft(0000000000000001)=0000000000000010 // ShiftLeft(1)=2
+ * ShiftLeft(0100000000000000)=1000000000000000
+ * ShiftLeft(1000000000000000)=0000000000000000
+ *
+ * This operation is (usually) equivalent to multiplying the input by 2.
+ * This definition is also called an arithmetic left-shift, and is useful for
+ * the efficient implementation of various operations which we will see later on
+ * in the course.
+ */
+
+CHIP ShiftLeft {
+    IN in[16];
+    OUT out[16];
+     
+    PARTS:
+	HalfAdder(a=false, b=in[0], sum=out[1]);
+	HalfAdder(a=false, b=in[1], sum=out[2]);
+	HalfAdder(a=false, b=in[2], sum=out[3]);
+	HalfAdder(a=false, b=in[3], sum=out[4]);
+	HalfAdder(a=false, b=in[4], sum=out[5]);
+	HalfAdder(a=false, b=in[5], sum=out[6]);
+	HalfAdder(a=false, b=in[6], sum=out[7]);
+	HalfAdder(a=false, b=in[7], sum=out[8]);
+	HalfAdder(a=false, b=in[8], sum=out[9]);
+	HalfAdder(a=false, b=in[9], sum=out[10]);
+	HalfAdder(a=false, b=in[10], sum=out[11]);
+	HalfAdder(a=false, b=in[11], sum=out[12]);
+	HalfAdder(a=false, b=in[12], sum=out[13]);
+	HalfAdder(a=false, b=in[13], sum=out[14]);
+	HalfAdder(a=false, b=in[14], sum=out[15]);
+	HalfAdder(a=false, b=false, sum=out[0]);    
+}
+
