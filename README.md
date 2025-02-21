@@ -12,6 +12,6 @@ This repository contains all 10 projects from the **Nand2Tetris** course, a hand
 **Technologies Used:**
 * HDL (Hardware Description Language)  
 * Hack Assembly  
-* Python for VM Translator & Compiler  
- 
- *Inspired by:* [nand2tetris.org](https://www.nand2tetris.org/)  
+* Python for VM Translator & Compiler
+
+Inspired by: [nand2tetris.org](https://www.nand2tetris.org/)  
