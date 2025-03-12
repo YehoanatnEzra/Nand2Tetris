@@ -17,11 +17,11 @@ This repository contains all 10 projects from the **Nand2Tetris** course, a hand
 * Hack Assembly  
 * Python for VM Translator & Compiler
 
+  Inspired by: [nand2tetris.org](https://www.nand2tetris.org/)  
+
 ## Feedback & Contact
 If you find any issues, have questions, or suggestions for improvement, feel free to reach out.
 - Email: yonzra12@gmail.com
-
-Inspired by: [nand2tetris.org](https://www.nand2tetris.org/)  
 
 ---
 ## License
